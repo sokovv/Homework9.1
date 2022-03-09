@@ -1,0 +1,7 @@
+dist
+coverage
+docs
+basic.js
+BasicTest.js
+Math.js
+Person.js
