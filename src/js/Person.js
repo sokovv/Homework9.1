@@ -1,32 +1,32 @@
 class Person {
   constructor(name) {
     this.name = name;
+    this.distance;
   }
 
-  getAttack(distance) {
-    this.distance = distance;
-    const attack = (this.attack - (distance * 10)) + 10;
+  get attack() {
+    const attack = (this.newattack - (this.distance * 10)) + 10;
     if (this.stoned === false) {
-      this.attack = attack;
+      return attack;
     }
     if (this.stoned === true) {
-      this.attack = attack - Math.log2(distance) * 5;
+      return attack - Math.log2(this.distance) * 5;
     }
-    if (distance > 10) {
-      this.attack = 0;
+    if (this.distance > 10) {
+      return 0;
     }
   }
 
-  getStoned() {
-    return this.stoned;
+  get stoned() {
+    return this.newstoned;
   }
 
-  setStoned(state) {
-    this.stoned = state;
+  set stoned(state) {
+    this.newstoned = state;
   }
 
-  setAttack(val) {
-    this.attack = val;
+  set attack(val) {
+    this.newattack = val;
   }
 }
 
